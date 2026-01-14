@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import HoverGlitchReveal from "../3d/HoverImage"; // your R3F effect
+import Image from "next/image";
 
 export default function EmbleImageCarousel() {
   const images = [
@@ -73,7 +74,7 @@ export default function EmbleImageCarousel() {
             return (
               <div
                 key={i}
-                className={`absolute inset-0 flex justify-center px-16 transition-opacity duration-700 ease-out
+                className={`absolute inset-0 mt-6 h-[130vh] flex justify-center px-16 transition-opacity duration-700 ease-out
                     ${
                       selectedIndex === i
                         ? "opacity-100 pointer-events-auto"
@@ -83,20 +84,46 @@ export default function EmbleImageCarousel() {
               >
                 {/* First image (static) */}
                 {first && (
-                  <div>
-                    <HoverGlitchReveal
-                      baseImage={first.url}
-                      revealImage={hoverImages[i % hoverImages.length]}
+                  <div
+                  className=" h-100 w-100 "
+                    style={{
+                      WebkitMaskImage: "url('/textures/rough-mask.png')",
+                      WebkitMaskSize: "cover",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskImage: "url('/textures/rough-mask.png')",
+                      maskSize: "cover",
+                      maskRepeat: "no-repeat",
+                    }}
+                  >
+                    <Image
+                      height={200}
+                      width={200}
+                      src={first.url}
+                      alt={first.alt}
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 )}
 
                 {/* Second image (hover R3F effect) */}
                 {second && (
-                  <div className="mt-20">
-                    <HoverGlitchReveal
-                      baseImage={second.url}
-                      revealImage={hoverImages[i % hoverImages.length]}
+                  <div
+                  className=" h-100 w-100 mt-20"
+                    style={{
+                      WebkitMaskImage: "url('/textures/rough-mask.png')",
+                      WebkitMaskSize: "cover",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskImage: "url('/textures/rough-mask.png')",
+                      maskSize: "cover",
+                      maskRepeat: "no-repeat",
+                    }}
+                  >
+                    <Image
+                      height={200}
+                      width={200}
+                      src={second.url}
+                      alt={first.alt}
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 )}
