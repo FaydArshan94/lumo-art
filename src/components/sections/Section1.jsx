@@ -4,11 +4,10 @@ import {
   Palette,
   Sparkles,
   CircleArrowRight,
-  ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import ImageCarousel from "../carousel/ImageCarousel";
 import GooeyImage3D from "../3d/GooeyImage";
+import EmbleImageCarousel from "../carousel/Embla";
 
 export default function Section1() {
   const containerRef = useRef(null);
@@ -186,7 +185,7 @@ export default function Section1() {
       </div>
 
       {/* Add spacing at bottom for scroll effect */}
-      <ImageCarousel />
+      <EmbleImageCarousel />
 
       {/* Feature Cards Section */}
       <section className="bg-[#1C1608] py-28">

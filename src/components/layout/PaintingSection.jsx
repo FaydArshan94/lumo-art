@@ -63,6 +63,7 @@ export default function PromptToPaintingSection() {
               height={50}
               width={150}
               src="/ancient2.png"
+              alt="anicent2"
             />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(0,0,0,0.65)_100%)]" />
             <button className=" text-sm text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#CEAF79] to-amber-400">
