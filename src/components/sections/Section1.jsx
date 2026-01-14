@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Users, Palette, Sparkles } from "lucide-react";
+import { Users, Palette, Sparkles, CircleArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import ImageCarousel from "../carousel/ImageCarousel";
 
 export default function Section1() {
@@ -179,6 +179,127 @@ export default function Section1() {
 
       {/* Add spacing at bottom for scroll effect */}
       <ImageCarousel />
+
+      {/* Feature Cards Section */}
+      <section className="bg-[#1C1608] py-28">
+        <div className="container mx-auto px-4">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-16">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#CEAF79] max-w-xl">
+              Everything You Need to Create
+              <br />
+              Masterpieces Without the Brush
+            </h2>
+
+            <div className="relative w-32 h-12 flex items-center opacity-50 hover:opacity-70 transition-all duration-300 justify-center">
+              {/* Top left brace */}
+              <div className="absolute top-0 left-0 w-4 h-6 border-t-2 border-l-2 border-amber-200 group-hover/btn:border-amber-100"></div>
+              {/* Bottom left brace */}
+              <div className="absolute bottom-0 left-0 w-4 h-6 border-b-2 border-l-2 border-amber-200 group-hover/btn:border-amber-100"></div>
+              {/* Top right brace */}
+              <div className="absolute top-0 right-0 w-4 h-6 border-t-2 border-r-2 border-amber-200 group-hover/btn:border-amber-100"></div>
+              {/* Bottom right brace */}
+              <div className="absolute bottom-0 right-0 w-4 h-6 border-b-2 border-r-2 border-amber-200 group-hover/btn:border-amber-100"></div>
+              {/* Icon */}
+             <div className="flex items-center justify-between gap-2 ">
+              <p className="font-semibold text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#CEAF79] to-amber-200">See All</p>
+               <ChevronRight size={24}  className="text-[#CEAF79]"/>
+             </div>
+            </div>
+          </div>
+
+          {/* Cards */}
+          <div className="flex items-center  pb-20 justify-between ">
+            {/* Text Card */}
+            <div
+              style={{
+                WebkitMaskImage: "url('/textures/rough-mask.png')",
+                WebkitMaskSize: "cover",
+                WebkitMaskRepeat: "no-repeat",
+                maskImage: "url('/textures/rough-mask.png')",
+                maskSize: "cover",
+                maskRepeat: "no-repeat",
+              }}
+              className="bg-[#2A1F0E] h-80 w-80 p-10 py-16 flex flex-col justify-between"
+            >
+              <h3 className=" relative font-bold text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#CEAF79] to-amber-200 mb-4">
+                AI-Powered Painting
+                <br />
+                Fine-Tuned Artistic Models
+              </h3>
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#CEAF79] to-amber-200 text-sm">
+                  Learn more
+                </span>
+
+                <CircleArrowRight className=" text-[#CEAF79]" />
+              </div>
+            </div>
+
+            {/* Image Card */}
+            <div className="relative h-80 w-80  ">
+              <img
+                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80"
+                alt=""
+                className="h-full w-full mt-20 "
+                style={{
+                  WebkitMaskImage: "url('/textures/rough-mask.png')",
+                  WebkitMaskSize: "cover",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskImage: "url('/textures/rough-mask.png')",
+                  maskSize: "cover",
+                  maskRepeat: "no-repeat",
+                }}
+              />
+              {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(0,0,0,0.6)_100%)]" /> */}
+            </div>
+
+            {/* Text Card */}
+            <div
+              style={{
+                WebkitMaskImage: "url('/textures/rough-mask.png')",
+                WebkitMaskSize: "cover",
+                WebkitMaskRepeat: "no-repeat",
+                maskImage: "url('/textures/rough-mask.png')",
+                maskSize: "cover",
+                maskRepeat: "no-repeat",
+              }}
+              className="bg-[#2A1F0E]  h-80 w-80 p-10 py-16 flex flex-col justify-between"
+            >
+              <h3 className="font-bold text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#CEAF79] to-amber-200 relative   mb-4">
+                Blend Your Vision
+                <br />
+                with Our Any Artistic Style
+              </h3>
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#CEAF79] to-amber-200 text-sm">
+                  Learn more
+                </span>
+
+                <CircleArrowRight className=" text-[#CEAF79]" />
+              </div>
+            </div>
+
+            {/* Image Card */}
+            <div className="relative h-80 w-80  ">
+              <img
+                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80"
+                alt=""
+                className="h-full w-full mt-20 "
+                style={{
+                  WebkitMaskImage: "url('/textures/rough-mask.png')",
+                  WebkitMaskSize: "cover",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskImage: "url('/textures/rough-mask.png')",
+                  maskSize: "cover",
+                  maskRepeat: "no-repeat",
+                }}
+              />
+              {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(0,0,0,0.6)_100%)]" /> */}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
