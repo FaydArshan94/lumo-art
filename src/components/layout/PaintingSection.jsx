@@ -2,6 +2,7 @@ import { CopyIcon, Heading } from "lucide-react";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 export default function PromptToPaintingSection() {
   const fadeUp = {
@@ -86,7 +87,26 @@ export default function PromptToPaintingSection() {
                 artists, emotional storytelling, dramatic scale.
               </p>
 
-              <button className="flex items-center gap-2 text-[#CEAF79] hover:text-amber-400 transition text-sm">
+              <button
+                onClick={() => {
+                  navigator.clipboard
+                    .writeText(` A lost kingdom dusk portrayed, cinematic fantasy oil painting,
+                grand lighting, dramatic lighting and shadow play, rich Baroque
+                textures, deep shadows and light contrast, fantasy realism, soft
+                brush strokes, inspired by Renaissance and classic sci-fi
+                artists, emotional storytelling, dramatic scale.`);
+
+                  toast("Prompt Copied Successfully!", {
+                    
+                    style: {
+                      borderRadius: "10px",
+                      background: "#1C1608",
+                      color: "#CEAF79",
+                    },
+                  });
+                }}
+                className="flex items-center gap-2 text-[#CEAF79] hover:text-amber-400 transition text-sm"
+              >
                 <CopyIcon className="text-xs" />
                 <span>Copy prompt</span>
               </button>
@@ -99,11 +119,11 @@ export default function PromptToPaintingSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex relative flex-col gap-4 p-2 bg-[#1C1608]"
+            className="flex relative flex-col gap-4 p-2 hover:scale-102 transition-all duration-300 bg-[#1C1608]"
           >
             <div className="w-60 h-40">
               <video
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover "
                 src="/sectionVideo.mp4"
                 autoPlay
                 loop

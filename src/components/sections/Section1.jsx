@@ -188,7 +188,7 @@ export default function Section1() {
               Masterpieces Without the Brush
             </motion.h2>
 
-            <div className="flex items-center gap-2 opacity-60 hover:opacity-100 transition">
+            <div className="flex items-center  justify-center opacity-60 hover:opacity-100 transition">
               <div className="relative w-32 h-12 flex items-center opacity-50 hover:opacity-70 transition-all duration-300 justify-center">
                 {/* Top left brace */}
                 <div className="absolute top-0 left-0 w-4 h-6 border-t-2 border-l-2 border-amber-200 group-hover/btn:border-amber-100"></div>
@@ -199,7 +199,7 @@ export default function Section1() {
                 {/* Bottom right brace */}
                 <div className="absolute bottom-0 right-0 w-4 h-6 border-b-2 border-r-2 border-amber-200 group-hover/btn:border-amber-100"></div>
                 {/* Icon */}
-                <div className=" flex items-center  gap-2">
+                <div className=" flex items-center justify-center  gap-2 w-full">
                   <span className="font-semibold text-[#CEAF79]">See All</span>
                   <ChevronRight size={24} className="text-[#CEAF79]"/>
                 </div>
