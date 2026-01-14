@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Lumo Art Your Imagination At One Place ",
+  title: "Lumo Art - Your Imagination At One Place ",
   description: "Your Imagination At One Place",
 };
 
