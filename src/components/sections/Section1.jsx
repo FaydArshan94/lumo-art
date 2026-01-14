@@ -268,7 +268,7 @@ export default function Section1() {
             </motion.div>
 
             <motion.div variants={fadeUp}>
-              <GooeyImage3D image="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" />
+              <GooeyImage3D image="https://images.unsplash.com/photo-1767777063136-a7295a0dd321?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
             </motion.div>
           </motion.div>
         </div>
