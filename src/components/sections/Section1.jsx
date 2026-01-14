@@ -1,6 +1,14 @@
 import React, { useEffect, useRef } from "react";
-import { Users, Palette, Sparkles, CircleArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Users,
+  Palette,
+  Sparkles,
+  CircleArrowRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import ImageCarousel from "../carousel/ImageCarousel";
+import GooeyImage3D from "../3d/GooeyImage";
 
 export default function Section1() {
   const containerRef = useRef(null);
@@ -201,10 +209,12 @@ export default function Section1() {
               {/* Bottom right brace */}
               <div className="absolute bottom-0 right-0 w-4 h-6 border-b-2 border-r-2 border-amber-200 group-hover/btn:border-amber-100"></div>
               {/* Icon */}
-             <div className="flex items-center justify-between gap-2 ">
-              <p className="font-semibold text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#CEAF79] to-amber-200">See All</p>
-               <ChevronRight size={24}  className="text-[#CEAF79]"/>
-             </div>
+              <div className="flex items-center justify-between gap-2 ">
+                <p className="font-semibold text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#CEAF79] to-amber-200">
+                  See All
+                </p>
+                <ChevronRight size={24} className="text-[#CEAF79]" />
+              </div>
             </div>
           </div>
 
@@ -237,22 +247,7 @@ export default function Section1() {
             </div>
 
             {/* Image Card */}
-            <div className="relative h-80 w-80  ">
-              <img
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80"
-                alt=""
-                className="h-full w-full mt-20 "
-                style={{
-                  WebkitMaskImage: "url('/textures/rough-mask.png')",
-                  WebkitMaskSize: "cover",
-                  WebkitMaskRepeat: "no-repeat",
-                  maskImage: "url('/textures/rough-mask.png')",
-                  maskSize: "cover",
-                  maskRepeat: "no-repeat",
-                }}
-              />
-              {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(0,0,0,0.6)_100%)]" /> */}
-            </div>
+            <GooeyImage3D image="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" />
 
             {/* Text Card */}
             <div
@@ -281,22 +276,7 @@ export default function Section1() {
             </div>
 
             {/* Image Card */}
-            <div className="relative h-80 w-80  ">
-              <img
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80"
-                alt=""
-                className="h-full w-full mt-20 "
-                style={{
-                  WebkitMaskImage: "url('/textures/rough-mask.png')",
-                  WebkitMaskSize: "cover",
-                  WebkitMaskRepeat: "no-repeat",
-                  maskImage: "url('/textures/rough-mask.png')",
-                  maskSize: "cover",
-                  maskRepeat: "no-repeat",
-                }}
-              />
-              {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(0,0,0,0.6)_100%)]" /> */}
-            </div>
+            <GooeyImage3D image="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" />
           </div>
         </div>
       </section>

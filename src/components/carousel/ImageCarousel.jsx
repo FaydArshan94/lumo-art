@@ -1,23 +1,33 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+
 
 export default function ImageCarousel() {
+
+
+
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
 
   const images = [
     {
-      url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80",
+      url: "/summer.jpg",
       alt: "Medieval harbor with sailing ship",
     },
     {
-      url: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80",
-      alt: "Ancient stone archway with procession",
+      url: "/egypt.jpg",
+      alt: "Egypt",
     },
     {
-      url: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
-      alt: "Mystical mountain landscape",
+      url: "/egyptian.jpg",
+      alt: "Egyptian",
+    },
+    {
+      url: "/woman.jpg",
+      alt: "woman",
     },
   ];
 
@@ -71,9 +81,11 @@ export default function ImageCarousel() {
             >
               {/* First image */}
               <div className="relative h-120 w-140 ">
-                <img
+                <Image
                   src={getImageForSlide(0).url}
                   alt={getImageForSlide(0).alt}
+                  width={1000}
+                  height={1000}
                   className="w-full h-full object-cover"
                   style={{
                     WebkitMaskImage: "url('/textures/rough-mask.png')",
@@ -90,9 +102,11 @@ export default function ImageCarousel() {
 
               {/* Second image */}
               <div className="relative h-120 w-140 mt-20 ">
-                <img
+                <Image
                   src={getImageForSlide(1).url}
                   alt={getImageForSlide(1).alt}
+                  width={1000}
+                  height={1000}
                   className="w-full h-full  object-cover"
                   style={{
                     WebkitMaskImage: "url('/textures/rough-mask.png')",
