@@ -3,8 +3,9 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
-import HoverGlitchReveal from "../3d/HoverImage"; // your R3F effect
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function EmbleImageCarousel() {
   const images = [
@@ -62,11 +63,26 @@ export default function EmbleImageCarousel() {
   const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden  min-h-screen">
       {/* Carousel */}
       <div ref={emblaRef}>
-        <div className="relative h-130">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="relative  "
+        >
           {Array.from({ length: Math.ceil(images.length / 2) }).map((_, i) => {
             const first = images[i * 2];
             const second = images[i * 2 + 1];
@@ -85,7 +101,7 @@ export default function EmbleImageCarousel() {
                 {/* First image (static) */}
                 {first && (
                   <div
-                  className=" h-100 w-100 "
+                    className=" h-120 w-120 "
                     style={{
                       WebkitMaskImage: "url('/textures/rough-mask.png')",
                       WebkitMaskSize: "cover",
@@ -108,7 +124,7 @@ export default function EmbleImageCarousel() {
                 {/* Second image (hover R3F effect) */}
                 {second && (
                   <div
-                  className=" h-100 w-100 mt-20"
+                    className=" h-120 w-120 mt-20"
                     style={{
                       WebkitMaskImage: "url('/textures/rough-mask.png')",
                       WebkitMaskSize: "cover",
@@ -130,7 +146,7 @@ export default function EmbleImageCarousel() {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
 
       {/* Navigation */}

@@ -1,26 +1,61 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function PricingSection() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const stagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
   return (
     <section className="bg-[#1C1608] py-20 ">
       <div className=" mx-auto ">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl   font-bold text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#e6ad4b] to-amber-200 mb-4">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-20"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#e6ad4b] to-amber-200 mb-4">
             Masterpiece Quality AI Art At a <br />
             Fraction of the Cost
           </h2>
-          <p className="text-[#CEAF79]/50 text-sm md:text-base">
-            Why pay more for generic generations? LumeArt delivers gallery-grade realism,
-            artistic soul, and depth for less than your daily coffee.
-          </p>
-        </div>
 
+          <p className="text-[#CEAF79]/50 text-sm md:text-base">
+            Why pay more for generic generations? LumeArt delivers gallery-grade
+            realism, artistic soul, and depth for less than your daily coffee.
+          </p>
+        </motion.div>
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12  max-w-7xl mx-auto">
-          
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto"
+        >
           {/* Pro Plan */}
-          <div className="relative h-164 w-160 p-20 ">
+          <motion.div
+            variants={fadeUp}
+            whileHover={{ scale: 1.015 }}
+            transition={{ type: "spring", stiffness: 120, damping: 15 }}
+            className="relative h-164 w-160 p-20 "
+          >
             <div
               className="absolute inset-0  pointer-events-none"
               style={{
@@ -35,10 +70,15 @@ export default function PricingSection() {
             />
 
             <div className="relative">
-              <h3 className="text-[#CEAF79] font-bold text-2xl mb-2">Pro Plan</h3>
+              <h3 className="text-[#CEAF79] font-bold text-2xl mb-2">
+                Pro Plan
+              </h3>
 
               <div className="tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#CEAF79] to-amber-400 text-7xl  mb-6">
-                $12<span className="text-xl ml-2 tracking-wide font-normal text-[#CEAF79]/60">/mo</span>
+                $12
+                <span className="text-xl ml-2 tracking-wide font-normal text-[#CEAF79]/60">
+                  /mo
+                </span>
               </div>
 
               <p className="text-[#CEAF79]/50 text-sm mb-6">
@@ -59,10 +99,15 @@ export default function PricingSection() {
                 Try ImagineArt Pro
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Studio Plan */}
-          <div className="relative  h-164 w-160 p-20   ">
+          <motion.div
+            variants={fadeUp}
+            whileHover={{ scale: 1.015 }}
+            transition={{ type: "spring", stiffness: 120, damping: 15 }}
+            className="relative  h-164 w-160 p-20   "
+          >
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
@@ -77,10 +122,15 @@ export default function PricingSection() {
             />
 
             <div className="relative">
-              <h3 className="text-[#CEAF79] font-bold text-2xl mb-2">Studio Plan</h3>
+              <h3 className="text-[#CEAF79] font-bold text-2xl mb-2">
+                Studio Plan
+              </h3>
 
               <div className="tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-[#CEAF79] to-amber-400 text-7xl  mb-6">
-                $49<span className="text-xl ml-2 tracking-wide font-normal text-[#CEAF79]/60">/mo</span>
+                $49
+                <span className="text-xl ml-2 tracking-wide font-normal text-[#CEAF79]/60">
+                  /mo
+                </span>
               </div>
 
               <p className="text-[#CEAF79]/50 text-sm mb-6">
@@ -101,9 +151,8 @@ export default function PricingSection() {
                 Try ImagineArt Studio
               </button>
             </div>
-          </div>
-
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
